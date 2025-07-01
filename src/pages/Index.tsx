@@ -30,18 +30,12 @@ const Index = () => {
     animate: { 
       opacity: 1, 
       y: 0, 
-      scale: 1,
-      transition: { 
-        duration: 0.8, 
-        ease: [0.25, 0.25, 0.25, 0.75],
-        staggerChildren: 0.1
-      }
+      scale: 1
     },
     exit: { 
       opacity: 0, 
       y: -100, 
-      scale: 1.1,
-      transition: { duration: 0.5 }
+      scale: 1.1
     }
   };
 
@@ -83,6 +77,11 @@ const Index = () => {
           initial="initial"
           animate="animate"
           exit="exit"
+          transition={{ 
+            duration: 0.8, 
+            ease: "easeInOut",
+            staggerChildren: 0.1
+          }}
           className="relative z-10"
         >
           <CurrentComponent />

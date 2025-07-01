@@ -41,6 +41,7 @@ const ProjectsSection = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   const containerVariants = {
+    initial: {},
     animate: {
       transition: {
         staggerChildren: 0.2
@@ -53,8 +54,7 @@ const ProjectsSection = () => {
     animate: { 
       opacity: 1, 
       y: 0, 
-      scale: 1,
-      transition: { duration: 0.6, ease: "easeOut" }
+      scale: 1
     }
   };
 
@@ -87,6 +87,7 @@ const ProjectsSection = () => {
             <motion.div
               key={project.id}
               variants={projectVariants}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               whileHover={{ 
                 scale: 1.02,
                 rotateX: 5,

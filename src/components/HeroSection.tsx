@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Float, Text3D, Center } from '@react-three/drei';
+import { OrbitControls, Float } from '@react-three/drei';
 import { Suspense } from 'react';
 
 const FloatingIcon = ({ position }: { position: [number, number, number] }) => {
@@ -30,6 +30,7 @@ const Scene3D = () => {
 
 const HeroSection = () => {
   const containerVariants = {
+    initial: {},
     animate: {
       transition: {
         staggerChildren: 0.3
@@ -41,8 +42,7 @@ const HeroSection = () => {
     initial: { opacity: 0, y: 50 },
     animate: { 
       opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
+      y: 0
     }
   };
 
@@ -64,6 +64,7 @@ const HeroSection = () => {
       >
         <motion.div
           variants={itemVariants}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8"
         >
           <h1 className="text-6xl md:text-8xl font-bold mb-6">
@@ -80,7 +81,11 @@ const HeroSection = () => {
           />
         </motion.div>
 
-        <motion.div variants={itemVariants} className="mb-8">
+        <motion.div 
+          variants={itemVariants} 
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-8"
+        >
           <h2 className="text-2xl md:text-4xl font-light mb-6 text-gray-300">
             Full Stack Developer & Creative Technologist
           </h2>
@@ -92,7 +97,10 @@ const HeroSection = () => {
           </p>
         </motion.div>
 
-        <motion.div variants={itemVariants}>
+        <motion.div 
+          variants={itemVariants}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <motion.button
             whileHover={{ 
               scale: 1.05,
@@ -113,6 +121,7 @@ const HeroSection = () => {
 
         <motion.div 
           variants={itemVariants}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
         >
           <div className="p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
